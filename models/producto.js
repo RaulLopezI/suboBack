@@ -7,6 +7,22 @@ const ProductoScheme = Schema({
         type: String,
         required: true
     },
+    descripcion: {
+        type: String,
+        required: true
+    },
+    pujaInicial: {
+        type: Number,
+        required: true
+    },
+    puja: {
+        type: Number,
+        required: false
+    },
+    cerrado: {
+        type: Boolean,
+        required: true
+    },
     usuario: {
         required: true,
         type: Schema.Types.ObjectId,
