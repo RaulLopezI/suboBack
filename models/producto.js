@@ -23,6 +23,15 @@ const ProductoScheme = Schema({
         type: Boolean,
         required: true
     },
+    img: {
+        type: String,
+        required: true
+    },
+    pujante: {
+        required: false,
+        type: Schema.Types.ObjectId,
+        ref: 'Usuario'
+    },
     usuario: {
         required: true,
         type: Schema.Types.ObjectId,

@@ -49,6 +49,9 @@ const actualizarProducto = async (req, res = response) => {
                 msg: 'No existe un Producto por ese id'
             });
         }
+
+        const { ...campos } = req.body;
+
         
         const ProductoActualizado = await Producto.findByIdAndUpdate(uid, campos, { new: true });
 
@@ -110,7 +113,8 @@ const actualizarProducto = async (req, res = response) => {
 module.exports = {
     getProductos,
     crearProducto,
-    getProductosUser
+    getProductosUser,
+    actualizarProducto
     /* actualizarProducto,
     borrarProducto,
     getProductosProducto */

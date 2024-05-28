@@ -12,7 +12,8 @@ const app = express();
 app.use( cors() );
 
 // Lectura y parseo del body
-app.use( express.json() );
+app.use( express.json({limit: '50mb'}) );
+
 
 // Base de datos
 dbConnection();
@@ -24,6 +25,8 @@ dbConnection();
 app.use( '/api/usuarios', require('./routes/usuarios') );
 app.use( '/api/login', require('./routes/auth') );
 app.use( '/api/producto', require('./routes/productos') );
+app.use( '/api/pujas', require('./routes/pujas') );
+
 
 app.listen( process.env.PORT, () => {
     console.log('Servidor corriendo en puerto ' + process.env.PORT );

@@ -8,7 +8,8 @@ const { validarCampos } = require("../middlewares/validar-campos");
 const {
   getProductos,
   crearProducto,
-  getProductosUser
+  getProductosUser,
+  actualizarProducto
 } = require("../controllers/productos");
 const { validarJWT } = require("../middlewares/validar-jwt");
 
@@ -25,16 +26,12 @@ router.post(
   ],
   crearProducto
 );
-
-/* router.put(
+router.put(
   "/:id",
-  [
-    validarJWT,
-    check("nombre", "El nombre es obligatorio").not().isEmpty(),
-    validarCampos,
-  ],
   actualizarProducto
 );
+
+/* 
 
 router.delete("/:id", validarJWT, borrarProducto); */
 
